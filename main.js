@@ -25,7 +25,7 @@ let pedirDescuento = (cantidad,oferta,docenas) => {
     }else{
         descuento = parseInt(0);
     };
-    return descuento
+    return descuento;
 }
 
 let pedirGustos = (preparacion,ingresaCantidad,infoHorno,infoFrita,gustosPedidos,cantidadPedidos) => {
@@ -41,7 +41,7 @@ let pedirGustos = (preparacion,ingresaCantidad,infoHorno,infoFrita,gustosPedidos
 
         if (posCatalogo == 0){
             gustosPedidos.push('\n'+preparacion+':\n');
-            cantidadPedidos.push('')
+            cantidadPedidos.push('');
         } 
 
         const sabores = empanadas[posCatalogo];
@@ -144,7 +144,7 @@ const guardaGustosPedidos = [];
 const guardaCantidadPedidos = [];
 let mostrarPedidos = '';
 
-alert("Tienda de empanadas \n Promociones unicamente manteniendo la misma cocción en empanadas clasicas")
+alert("Tienda de empanadas \n Promociones unicamente manteniendo la misma cocción en empanadas clasicas");
 
 const variedadEmpanadas = empanadas.map((empanada) => empanada.tipo);
 
@@ -176,11 +176,11 @@ while (validacionCantidad == 0){
         let pidoEmpanadas = prompt(`Ingrese cantidad de empanadas (${cocina[index]})`);
 
         if (pidoEmpanadas > 0){
-            validacionCantidad += 1
+            validacionCantidad += 1;
             tipoCoccion = cocina[index];
             pedirGustos(tipoCoccion,pidoEmpanadas,datosHorno,datosFrita,guardaGustosPedidos,guardaCantidadPedidos);
         }else{
-            repeticiones +=1
+            repeticiones +=1;
             if (repeticiones == 2){
                 alert("Debe indicar cuantas empanadas quiere ordenar. Reintente nuevamente");
                 repeticiones = 0;
@@ -228,9 +228,9 @@ for (let index = 0; index < guardaGustosPedidos.length; index++) {
 }
 
 let verPedido = prompt("Si desea ver el pedido, escriba 'SI'");
-verPedido = verPedido.toUpperCase()
+verPedido = verPedido.toUpperCase();
 
 if (verPedido == 'SI'){
-    alert (mostrarPedidos)
+    alert (mostrarPedidos);
 };
 
