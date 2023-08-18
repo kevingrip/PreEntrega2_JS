@@ -14,7 +14,7 @@ const promo = [
     {tipo: "docena frita", precio: 2600}
 ];
 
-const cocina = ["Horno","Frita"]
+const cocina = ["Horno","Frita"];
 
 let descuentoDocenas = (precioTotal,precioPromo,cantDocenas,restantes,cantidad) => (precioTotal-(precioPromo*cantDocenas)-(restantes*(precioTotal/cantidad)));
 
@@ -26,7 +26,7 @@ let pedirDescuento = (cantidad,oferta,docenas) => {
         descuento = parseInt(0);
     };
     return descuento;
-}
+};
 
 let pedirGustos = (preparacion,ingresaCantidad,infoHorno,infoFrita,gustosPedidos,cantidadPedidos) => {
 
@@ -111,7 +111,7 @@ let pedirGustos = (preparacion,ingresaCantidad,infoHorno,infoFrita,gustosPedidos
         infoFrita[2] = sumaPrecioEspecial;
         infoFrita[3] = cantEspecial;
     };
-}
+};
 
 let verLista = (tipoEmpanada) => {
 
@@ -126,7 +126,7 @@ let verLista = (tipoEmpanada) => {
     });
 
     alert(`${mensajePrincipal}\n${mostrarLista}`);
-}
+};
 
 let contadorPromo = 1;
 let totalCatalogo = 0;
@@ -151,8 +151,8 @@ const variedadEmpanadas = empanadas.map((empanada) => empanada.tipo);
 for (let index = 0; index < variedadEmpanadas.length; index++) {
     if (!tipoUnico.includes(variedadEmpanadas[index])){
     tipoUnico.push(variedadEmpanadas[index]);
-    }    
-}
+    }; 
+};
 
 tipoUnico.forEach (tipo => {
     verLista(tipo);
@@ -168,7 +168,7 @@ alert(textoPromo);
 
 for (let index = 0; index < empanadas.length; index++) {
     totalCatalogo += 1;
-}
+};
 
 //validacion para que el programa se reinicie cuando no piden empanadas
 while (validacionCantidad == 0){
@@ -181,13 +181,14 @@ while (validacionCantidad == 0){
             pedirGustos(tipoCoccion,pidoEmpanadas,datosHorno,datosFrita,guardaGustosPedidos,guardaCantidadPedidos);
         }else{
             repeticiones +=1;
+
             if (repeticiones == 2){
                 alert("Debe indicar cuantas empanadas quiere ordenar. Reintente nuevamente");
                 repeticiones = 0;
-            }
-        }
+            };
+        };
     };
-}
+};
 
 //alert (`HORNO Precio clasica: ${datosHorno[0]},Cant clasica: ${datosHorno[1]},Precio especial: ${datosHorno[2]},Cant especial:${datosHorno[3]}`);
 //alert (`FRITA Precio clasica: ${datosFrita[0]},Cant clasica: ${datosFrita[1]},Precio especial: ${datosFrita[2]},Cant especial:${datosFrita[3]}`);
@@ -219,13 +220,13 @@ if ((descuentoFrita == 0) & (descuentoHorno == 0)){
             alert (`${cocina[0]}: $${datosHorno[0]+datosHorno[2]}\n    ${cocina[1]}: $${datosFrita[0]+datosFrita[2]}  - $${descuentoFrita} (descuento)\n ---------\n   Total: $${precioFinalHorno+precioFinalFrita}`);
         }else{
             alert (`${cocina[0]}: $${datosHorno[0]+datosHorno[2]}  - $${descuentoHorno} (descuento)\n    ${cocina[1]}: $${datosFrita[0]+datosFrita[2]}  - $${descuentoFrita} (descuento)\n ---------\n   Total: $${precioFinalHorno+precioFinalFrita}`);
-        }
-    }
-}
+        };
+    };
+};
 
 for (let index = 0; index < guardaGustosPedidos.length; index++) {
     mostrarPedidos = mostrarPedidos + guardaGustosPedidos[index] +  guardaCantidadPedidos[index] + '\n'; 
-}
+};
 
 let verPedido = prompt("Si desea ver el pedido, escriba 'SI'");
 verPedido = verPedido.toUpperCase();
