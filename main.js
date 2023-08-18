@@ -58,7 +58,7 @@ let pedirGustos = (preparacion,ingresaCantidad,infoHorno,infoFrita,gustosPedidos
                 sumaPrecioClasica += sabores.precioHorno*cantidadOrdenada;
             }else{
                 sumaPrecioClasica += sabores.precioFrita*cantidadOrdenada;
-            }
+            };
             cantClasica += cantidadOrdenada;
             
         }else{
@@ -87,7 +87,7 @@ let pedirGustos = (preparacion,ingresaCantidad,infoHorno,infoFrita,gustosPedidos
             sumaPrecioEspecial = 0;
             cantClasica = 0;
             cantEspecial =0;
-        }
+        };
         if (sumaCantidad < ingresaCantidad && posCatalogo == totalCatalogo){
             cantidadOrdenada = 0;
             sumaCantidad = 0;
@@ -98,8 +98,9 @@ let pedirGustos = (preparacion,ingresaCantidad,infoHorno,infoFrita,gustosPedidos
             cantEspecial =0;
             alert("Error: Seleccionó menos empanadas que las solicitadas. Reintente nuevamente");
             ingresaCantidad = parseInt(prompt(`Reingrese cantidad de empanadas (${preparacion})`));
-        }
+        };
     };
+    alert (`Empanadas (${preparacion}) seleccionadas correctamente`);
     if (preparacion == "Horno"){
         infoHorno[0] = sumaPrecioClasica;
         infoHorno[1] = cantClasica;
